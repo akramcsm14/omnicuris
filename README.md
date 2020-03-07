@@ -1,7 +1,17 @@
 # Welcome to Omnicuris!
 
 This is an ecom backend application API document
+# Pre-requisites
+>MySql Database
+>Create a database named **omnicuris**
+>import the schema added in database-schema using below command
+> > mysql omnicuris < omnicuris.sql
 
+>give the password of your mysql in **application.properties**
+> > spring.datasource.password=**mysqlpassword**
+
+
+# API Doc
 ## Add new item/items
 
 Path: **/features/addNewItem**
