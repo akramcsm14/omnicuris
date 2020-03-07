@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "a807d5c5-2ea1-42b0-a7c8-e25d409223fd",
+		"name": "omnicuris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add new item/items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"itemName\": \"Product-003\",\n        \"manufacturer\": \"Omnicuris\",\n        \"noOfItemAvailable\": 4\n    },\n    {\n        \"itemName\": \"Product-004\",\n        \"manufacturer\": \"Omnicuris\",\n        \"noOfItemAvailable\": 10\n    }\n]"
+				},
+				"url": {
+					"raw": "localhost:8090/features/addNewItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"addNewItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Item",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8090/features/allItems",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"allItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add item stock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8090/features/addItemStock?id=1&count=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"addItemStock"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "count",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Place Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"itemId\": 1,\n        \"email\": \"akramcsm14@gmail.com\",\n        \"noOfItem\": 2\n    },\n    {\n        \"itemId\": 4,\n        \"email\": \"akramcsm14@gmail.com\",\n        \"noOfItem\": 2\n    }\n]"
+				},
+				"url": {
+					"raw": "localhost:8090/features/placeOrder",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"placeOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8090/features/allOrders",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"allOrders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders By Email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8090/features/ordersByEmail?email=akramcsm14@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"ordersByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "akramcsm14@gmail.com"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"itemId\" : 2,\n\t\"email\" : \"akramcsm14@gmail.com\",\n\t\"noOfItem\" : 1\n}"
+				},
+				"url": {
+					"raw": "localhost:8090/features/updateOrder",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"updateOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 2,\n\t\"itemName\" : \"Product-002\",\n\t\"manufacturer\" : \"Omnicuris\",\n\t\"noOfItemAvailable\" : 10\n}"
+				},
+				"url": {
+					"raw": "localhost:8090/features/updateItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"features",
+						"updateItem"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
